@@ -18,6 +18,9 @@ jobs:
           show-progress: false
       - name: Install, build, and upload site
         uses: withastro/action@v1
+	with:
+	  cache: 'npm'
+	  cache-dependency-path: 'package-lock.json'
 
   deploy:
     name: Deploy
