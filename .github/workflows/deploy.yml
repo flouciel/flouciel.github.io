@@ -43,7 +43,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      publish_dir: ./public
+      publish_dir: public
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
