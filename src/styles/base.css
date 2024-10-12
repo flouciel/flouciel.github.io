@@ -13,9 +13,9 @@
     --color-border: 227, 169, 198;
   }
   html[data-theme="dark"] {
-    --color-fill: 0, 1, 35;
-    --color-accent: 26, 217, 217;
-    --color-text-base: 234, 237, 243;
+    --color-fill: 14, 30, 47;
+    --color-accent: 172, 249, 72;
+    --color-text-base: 214, 227, 240;
     --color-card: 33, 34, 83;
     --color-card-muted: 12, 14, 79;
     --color-border: 48, 63, 138;
