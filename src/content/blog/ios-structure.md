@@ -8,13 +8,14 @@ tags:
   - iOS
   - Mobile
   - ipa
+  - security
 description: "iOS apps are distributed in IPA (iOS App Store Package) archives, which are ZIP-compressed files containing the app's binary, resources, and metadata needed to execute on iOS devices."
 ---
 
 ## IPA File Structure
 
 iOS apps are distributed in IPA (iOS App Store Package) archives, which are ZIP-compressed files containing the app's binary, resources, and metadata needed to execute on iOS devices. Similar to Android's APK, IPA files are specific to Apple's iOS devices and are used to install apps on iPhones, iPads, and iPods.
-2024-10-15-16-12-26.png
+
 | Name      | Description |
 | ----------- | ----------- |
 | iTunesArtwork      | A 512x512 pixel PNG image used as app’s icon that shows up on iTunes, and App Store.|

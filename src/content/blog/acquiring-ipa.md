@@ -8,6 +8,7 @@ tags:
   - iOS
   - Mobile
   - IPA
+  - security
 description: "The IPA file is required for various areas of mobile app examination and security."
 ---
 The IPA file is required for various areas of mobile app examination and security. It contains the compiled program, as well as its executable, resources, and metadata, allowing for in-depth inspection and evaluation. Security professionals utilize the IPA file to conduct comprehensive security assessments, detecting potential vulnerabilities and flaws. It also enables reverse engineering to comprehend app behavior and identify hidden dangerous code.

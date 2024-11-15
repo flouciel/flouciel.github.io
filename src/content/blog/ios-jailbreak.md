@@ -8,6 +8,7 @@ tags:
   - iOS
   - Mobile
   - jailbreak
+  - security
 description: "Jailbreaking an iPhone refers to bypassing the restrictions and limitations set by Apple's iOS."
 ---
 

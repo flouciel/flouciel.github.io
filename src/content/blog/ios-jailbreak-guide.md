@@ -8,6 +8,7 @@ tags:
   - iOS
   - Mobile
   - jailbreak
+  - security
 description: "The process for jailbreaking various iOS versions can be quite different."
 ---
 
