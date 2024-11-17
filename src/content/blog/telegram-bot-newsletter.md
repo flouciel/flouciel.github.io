@@ -70,23 +70,23 @@ Alternative: https://www.newskeeper.io/
 
 Here are some of the security resources I follow
 
-| Site                                | Feed URL                                     | URL                                           |
-| ----------------------------------- | -------------------------------------------- | --------------------------------------------- |
-| Resilient Cyber                     | https://www.resilientcyber.io/feed           | https://www.resilientcyber.io/                |
-| The Software Analyst Cyber Research | https://softwareanalyst.substack.com/feed    | https://softwareanalyst.substack.com/         |
-| better appsec - Medium              | https://betterappsec.com/feed                | https://betterappsec.com/                     |
-| Reasonable Application Security     | https://rss.beehiiv.com/feeds/qzqvvIt0tM.xml | https://appsec.beehiiv.com/                   |
-| tl;dr sec                           | https://rss.beehiiv.com/feeds/xgTKUmMmUm.xml | https://tldrsec.com/                          |
-| API Security News                   | https://apisecurity.io/feed/index.xml        | https://apisecurity.io/                       |
-| Latio Pulse                         | https://pulse.latio.tech/feed                | https://pulse.latio.tech/                     |
-| The Cybersecurity Pulse (TCP)       | https://www.cybersecuritypulse.net/feed      | https://www.cybersecuritypulse.net/           |
-| The Hacker News                     | https://feeds.feedburner.com/TheHackersNews  | https://thehackernews.com                     |
-| Return On Security                  | https://rss.beehiiv.com/feeds/tLSvUYOBwf.xml | https://www.returnonsecurity.com/t/Newsletter |
-| Vulnerable U                        | https://rss.beehiiv.com/feeds/lSfumbrEGk.xml | https://www.vulnu.com/                        |
-| Secure All Software                 | https://www.secureallsoftware.com/feed       | https://www.secureallsoftware.com/            |
-| CSO Online                          | https://www.csoonline.com/feed/              | https://www.csoonline.com/                    |
-| AWS Security Blog                   | https://aws.amazon.com/blogs/security/feed/  | https://aws.amazon.com/blogs/security/        |
-| CramHacks                           | https://rss.beehiiv.com/feeds/uGY9n2H0Mg.xml | https://www.cramhacks.com/                    |
+| Site                                                                          | Feed URL                                     |
+| ------------------------------------------------------------------------------| -------------------------------------------- |
+| [Resilient Cyber](https://www.resilientcyber.io/ )                            | https://www.resilientcyber.io/feed           |
+| [The Software Analyst Cyber Research](https://softwareanalyst.substack.com/)  | https://softwareanalyst.substack.com/feed    |       
+| [better appsec - Medium](https://betterappsec.com/ )                          | https://betterappsec.com/feed                |                     
+| [Reasonable Application Security](https://appsec.beehiiv.com/)                | https://rss.beehiiv.com/feeds/qzqvvIt0tM.xml |
+| [tl;dr sec](ttps://tldrsec.com/)                                              | https://rss.beehiiv.com/feeds/xgTKUmMmUm.xml |
+| [API Security News](https://apisecurity.io/)                                  | https://apisecurity.io/feed/index.xml        |
+| [Latio Pulse](https://pulse.latio.tech/)                                      | https://pulse.latio.tech/feed                |
+| [The Cybersecurity Pulse (TCP)]( https://www.cybersecuritypulse.net/)         | https://www.cybersecuritypulse.net/feed      |
+| [The Hacker News](https://thehackernews.com )                                 | https://feeds.feedburner.com/TheHackersNews  |
+| [Return On Security](https://www.returnonsecurity.com/t/Newsletter)           | https://rss.beehiiv.com/feeds/tLSvUYOBwf.xml |
+| [Vulnerable U](https://www.vulnu.com/ )                                       | https://rss.beehiiv.com/feeds/lSfumbrEGk.xml |
+| [Secure All Software](https://www.secureallsoftware.com/)                     | https://www.secureallsoftware.com/feed       |
+| [CSO Online](https://www.csoonline.com/)                                      | https://www.csoonline.com/feed/              |
+| [AWS Security Blog](https://aws.amazon.com/blogs/security/)                   | https://aws.amazon.com/blogs/security/feed/  |
+| [CramHacks](https://www.cramhacks.com/)                                       | https://rss.beehiiv.com/feeds/uGY9n2H0Mg.xml |
 
 
 In this channel, paste the bellow command
