@@ -71,11 +71,15 @@
   }
   .prose a {
     @apply break-words hover:!text-skin-accent;
+    word-break: break-all;
   }
   .prose thead th:first-child,
   tbody td:first-child,
   tfoot td:first-child {
     padding-left: 0.5714286em;
+  }
+  .prose tbody td:first-child {
+    word-break: break-all;
   }
   .prose h2#table-of-contents {
     @apply mb-2;
