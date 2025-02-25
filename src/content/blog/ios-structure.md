@@ -1,5 +1,5 @@
 ---
-title: IPA (iOS AppStore Package)
+title: Nailing the basic of IPA structure
 author: Hazy
 pubDatetime: 2024-10-14
 featured: false
@@ -9,28 +9,35 @@ tags:
   - Mobile
   - ipa
   - security
-description: "iOS apps are distributed in IPA (iOS App Store Package) archives, which are ZIP-compressed files containing the app's binary, resources, and metadata needed to execute on iOS devices."
+description: "Breaking down the basics of IPA structure, know what you're testing before you dive in."
 ---
 
-## IPA File Structure
+When I first started security testing iOS apps, I didn’t really care about diving deep into the details of IPA file. I was more focused on finding vulnerabilities and running basic tests. But that changed when a QA engineer asked me during a mobile security training session: "What exactly is inside an IPA app?".
 
-iOS apps are distributed in IPA (iOS App Store Package) archives, which are ZIP-compressed files containing the app's binary, resources, and metadata needed to execute on iOS devices. Similar to Android's APK, IPA files are specific to Apple's iOS devices and are used to install apps on iPhones, iPads, and iPods.
+Maybe this blog post will answer her question and serve as a note for myself.
+
+
+## IPA (iOS App Store Package)
+
+iOS apps are packaged as IPA files, which are ZIP-compressed archives containing the app's binary, resources, and metadata needed for execution on iOS devices. Similar to Android's APK, IPA files are specific to Apple's iOS devices and are used to install apps on iPhones, iPads, and iPods.
+
+## IPA Structure
 
 | Name      | Description |
 | ----------- | ----------- |
 | iTunesArtwork      | A 512x512 pixel PNG image used as app’s icon that shows up on iTunes, and App Store.|
-| iTunesMetadata.plist | A property list file that contains developer information like developer name, ID, copyright information, application name, release information, etc.|
-|META-INF| Subdirectory within the IPA file stores meta-information used by the application during open IPA file creation. <br> Under the META-INF/ folder, you will find two more files: <br> - com.apple.FixedZipMetadata.bin <br> - com.apple.ZipMetadata.plist|
-|WatchKitSupport/WK|The WatchKit framework simplifies app development for watchOS apps, including managing background tasks, extended runtime sessions, Siri intents, and accessing user information about Apple Watch within the IPA system.|
+| iTunesMetadata.plist | A property list file that contains developer information like developer name, ID, copyright information, application name etc.|
+|META-INF| Subdirectory within the IPA file stores meta-information. Inside, you will find two more files: <br> - com.apple.FixedZipMetadata.bin <br> - com.apple.ZipMetadata.plist|
+|WatchKitSupport/WK|The framework simplifies app development for watchOS apps, including managing background tasks, extended runtime sessions, Siri intents, and accessing user information about Apple Watch|
 |Payload| Folder that contains the application data.|
 |Application Binary|The executable file containing the application’s code. Same name with actual application name. The complete binary analysis is performed on this application binary.|
-|Mobile Provision file|By default, applications on iOS can only installed via AppStore. In some special cases, when the app is to be beta tested, mobile provision certificates are generated and used. This is the file which is included in the binary when ad hoc distribution of the file is to be 
+|Mobile Provision file|iOS apps are typically installed via the App Store, but for beta testing or ad hoc distribution, a mobile provisioning profile is included to allow installation on specific devices.
 |Code Signature|Check the integrity of the app when the application was released. Any kind of editing or deletion will invalidate the signature. Any changes that are made to the .app file require that the whole package be re-signed.|
 |Bundled Resource Files|Images, Videos, Sounds, HTML, Property list files, etc. which are required by the application to be installed on the mobile device.|
 
 ## Payload: A Closer Look
 
-In the Payload folder, you'll find a .app folder representing the app's name. Inside, all app data is stored. 
+In the Payload folder, we have a .app folder representing the app's name. Inside, all app data is stored. 
 
 For example: Spotify app
 ![spotify-app](@assets/images/2024-10-15-16-28-06.png)

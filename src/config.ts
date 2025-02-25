@@ -139,9 +139,9 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
   {
-    name: "Mastodon",
-    href: "#",
-    linkTitle: `${SITE.title} on Mastodon`,
-    active: false,
+    name: "Substack",
+    href: "https://flouciel.substack.com/",
+    linkTitle: `${SITE.title} on Substack`,
+    active: true,
   },
 ];

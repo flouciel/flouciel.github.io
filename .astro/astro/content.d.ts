@@ -155,9 +155,9 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"ios-jailbreak.md": {
-	id: "ios-jailbreak.md";
-  slug: "ios-jailbreak";
+"ios-jailbreak-type.md": {
+	id: "ios-jailbreak-type.md";
+  slug: "ios-jailbreak-type";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

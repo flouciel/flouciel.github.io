@@ -1,5 +1,5 @@
 ---
-title: Understanding iOS Jailbreaking - A Look at Various Jailbreak Types
+title: Thoughts on Jailbreak
 author: Hazy
 pubDatetime: 2024-10-14
 featured: false

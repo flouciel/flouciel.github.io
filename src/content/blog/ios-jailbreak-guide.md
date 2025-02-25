@@ -1,6 +1,6 @@
 ---
-title: Unlocking iPhone - Guide to Jailbreaking iOS
-author: 4azy
+title: Hello iOS. Can I "root" an iPhone?
+author: Hazy
 pubDatetime: 2024-05-02
 featured: false
 draft: false
@@ -9,18 +9,23 @@ tags:
   - Mobile
   - jailbreak
   - security
-description: "The process for jailbreaking various iOS versions can be quite different."
+description: "Switching from Android to iOS — goodbye root, any challenges and restrictions? How to break them."
 ---
 
+Recently, just came back to conduct a security testing for our internal mobile apps at work. I needed to set up a testing environment, buy new devices, root them all, and do more. This is a quick wrap-up of what I did. Also, I’m biased toward the iFan, so I’m not sure if we’ll have a Android root series. I can’t promise.
 
-Before we begin, verify the supported devices and the compatible iOS version, then select the appropriate method for jailbreaking. We can find more details [here](https://ios.cfw.guide/get-started).
+So here we are, a guide to jailbreaking an iPhone. If you're new to the term jailbreaking, take a few seconds to check out my [other post](/posts/ios-jailbreak-type). 
 
-## Updated method: [Palera1n](https://palera.in/)
+## Pre-jailbreak
+
+Before we get started, let’s check what I have: an iPhone X running iOS 16.7.2. I chose this device because it strikes a balance, new enough to test modern apps but not too new to tackle the difficulties of jailbreaking. Then, select the appropriate method for jailbreaking at [ios.cfw.guide.](https://ios.cfw.guide/get-started)
+
+## Jailbreak with [Palera1n](https://palera.in/)
 ```console
 - palera1n
 - MacOS
 - iPhone X, version 16.7.2
-- Must use USB-A to lighting cable
+- Must use USB-A to lighting cable due to compatibility issues when entering DFU mode. 
 ```
 
 Step 1. Remove Passcode in iPhone. Connect iPhone to Mac with a cable, then Click <span class="accent">“Trust”</span> this computer.
@@ -36,11 +41,11 @@ Step 3: Run palera1n on command line
 Step 4: Enter and follow the instruction
 ![palera1n-cli-2](@assets/images/2024-10-15-15-08-18.png)
 
-After complete, this will install paler1n and sileo app on the device.
+After complete, this will install <span class="accent">paler1n</span> and <span class="accent">sileo</span> app on the device.
 ![palera1n-result](@assets/images/2024-10-15-15-26-22.png)
 
-### Troubleshooting
-SSH to iPhone with port 22 not work because of the changes of Palera1n, go with the alternative method
+## Troubleshooting
+The first issue I encountered was that SSH to iPhone on port 22 didn’t work due to changes in Palera1n, so I had to use an alternative method.
 (src: Q&A on palera1n.in)
 > password: root/mobile is alpine
 > > 
@@ -64,7 +69,7 @@ source .profile
 ```
 ---
 
-## Old method: [Checkra1n](https://checkra.in/)
+## Revised version of the old method: [Checkra1n](https://checkra.in/)
 
 ```console
 - Checkra1n: 0.12.3 version

@@ -1,5 +1,5 @@
 ---
-title: How I Stay Updated on Security Feeds with a Telegram Bot
+title: Lifelong Learning - Centralizing own Newsletters
 author: Hazy
 pubDatetime: 2024-11-15
 featured: false
@@ -9,16 +9,21 @@ tags:
   - productivity
   - security
   - telegram
-description: "In today’s fast-paced digital world, staying informed about the latest security threats, vulnerabilities, and trends is critical, especially for security professionals and enthusiasts."
+  - TIL
+description: "TIL: Learn how I stay up-to-date with tech and what resources I used to grow to ."
 ---
 
-### <span class="accent">Situation</span>
+The Internet is flooded with content, materials, and resources. It's tough to find the most useful newsletters, blogs, creators while keeping everything centralized, simple, and minimal. 
 
-Being in cybersecurity, you gotta stay on top of the latest threats, vulnerabilities, and security news. But let’s be real — it’s a total headache trying to keep up with the endless stream of info from blogs, forums, and databases. It gets overwhelming fast. So, I had one goal in mind: how do I make this whole process easier and still keep up with the important stuff without drowning in updates?
+In this article, I want to share how I stay up-to-date on the future of learning and work. Each resource on this list has taught me something new and helped me grow as a lifelong learner.
+
+
+### <span class="accent">Context</span>
+Being in cybersecurity, I need to keep up with the industry trends, latest threats, libraries, tools, vulnerabilities, etc, so that I can apply this knowledge at my job.
 
 ### <span class="accent">Complication</span>
 
-The first challenge I encountered was information overload. The cybersecurity landscape is continuously changing, with new vulnerabilities and attacks being popping up daily. While I understood the value of remaining informed, the sheer amount of information made it impossible to keep up. 
+The first challenge I encountered was information overload. The cybersecurity landscape is continuously changing, with new vulnerabilities and attacks being popping up daily. While I understood the value of remaining informed, the sheer amount of information made it overwhelming to keep up. 
 
 Here’s a quick rundown of the challenges I faced:
 
@@ -26,13 +31,15 @@ Here’s a quick rundown of the challenges I faced:
 - Missed stuff: Important updates slipped through the cracks because the info was scattered all over the place.
 - Lack of organization: Keeping track of security updates was a mess since they were spread across so many channels.
 
-### <span class="accent">Resolution</span>: Two Approaches to Stay Updated on Security News
+### <span class="accent">Resolution</span>
 
 #### 1. Traditional Way: Email Notifications
 The first thing I tried was setting up email notifications for the blogs, newsletters, and other resources I follow. Many security websites and blogs offer the option to receive email updates whenever they post something new.
 
 - Email Subscriptions: I could subscribe to email newsletters or set up alerts for specific security topics or sources.
 - Daily Digest: Most platforms offer daily or weekly email summaries of the latest posts, making it easier to stay in the loop without constantly checking websites.
+
+![email-sub](@assets/images/tldr-sub.png)
 
 This has its pros and cons. It’s straightforward and helps me get things done much faster, but it does have some drawbacks:
 
@@ -41,13 +48,13 @@ This has its pros and cons. It’s straightforward and helps me get things done 
 
 ![email-noti](@assets/images/tldr-email.png)
 
-#### 2. Telegram bot. 
+#### 2. Telegram Bot. 
 
-The second, and ultimately better, solution was to create a Telegram bot that could automatically send updates from my chosen security sources. Since I use Telegram daily, it made perfect sense to use it for receiving updates.
+The second, and I think much better is using a bot to automatically send notifications from my curated list of resources. Telegram is my favorite tool and one I use daily, so it make perfect sense to make it a platform for my knowledge hub.
 
 Here's how it setup:
 
-1. Create a Telegram bot via [BotFather](@BotFather)
+1. Create a Telegram bot via [BotFather](https://t.me/botfather)
 2. Using [RSStT](https://github.com/Rongronggg9/RSS-to-Telegram-Bot).
 
 Alternative: https://www.newskeeper.io/
@@ -96,7 +103,10 @@ In this channel, paste the bellow command
 ```
 
 #### <span class="accent">The Result</span>
-Now, I have a fully automated system that sends real-time security updates straight to my Telegram channel, so I don’t have to manually check websites or emails anymore. The Telegram bot makes everything seamless and ensures I never miss an important security post. This setup has greatly boosted my efficiency and guarantees I’m always in the loop with the latest cybersecurity news.
+Now, I have a fully automated system that delivers real-time security updates directly to my Telegram channel, eliminating the need to manually check websites or emails. The Telegram bot streamlines everything, ensuring I never miss an important security update. This setup has significantly improved my efficiency and keeps me constantly informed about the latest cybersecurity news.
+
+<span class="accent">If you're interested with my channel. You can find and follow it [here](https://t.me/tldrsecurity).</span>
 
 Thanks for reading!
+
 ![tldr-telegram](@assets/images/tldr-telegram.png)
