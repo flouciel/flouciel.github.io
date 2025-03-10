@@ -1,9 +1,4 @@
-# Flou Ciel - Hazy 📄
-
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+# Flou Ciel - Hazy 
 
 My personal blog is built using the AstroPaper theme, a minimal blog template. (https://github.com/satnaing/astro-paper)
 
@@ -20,18 +15,10 @@ My personal blog is built using the AstroPaper theme, a minimal blog template. (
 - [x] sitemap & rss feed
 - [x] followed best practices
 - [x] highly customizable
-- [x] dynamic OG image generation for blog posts [#15](#/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
+- [x] dynamic OG image generation for blog posts
 - [x] giscus comment
 - [x] is-a.dev domain
 
-
-## ✅ Lighthouse Score
-
-<p align="center">
-  <a href="https://pagespeed.web.dev/analysis/https-hazy-is-a-dev/dpl37rthsy?form_factor=desktop">
-    <img width="710" alt="Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
-  <a>
-</p>
 
 ## 💻 Tech Stack
 
@@ -46,6 +33,7 @@ My personal blog is built using the AstroPaper theme, a minimal blog template. (
 **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
 **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
 **Linting** - [ESLint](https://eslint.org)
+**is-a.dev** - [is-a.dev](https://github.com/is-a-dev/register)
 
 ## 👨🏻‍💻 Running Locally
 

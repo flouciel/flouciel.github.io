@@ -169,6 +169,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"rethinking-threat-modeling.md": {
+	id: "rethinking-threat-modeling.md";
+  slug: "rethinking-threat-modeling";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "telegram-bot-newsletter.md": {
 	id: "telegram-bot-newsletter.md";
   slug: "telegram-bot-newsletter";

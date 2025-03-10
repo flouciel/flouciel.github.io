@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Hazy",
   desc: "A minimal theme.",
   title: "l.u.n.e",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "blog.png",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
