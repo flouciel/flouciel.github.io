@@ -148,6 +148,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"hard-coded-scanning.md": {
+	id: "hard-coded-scanning.md";
+  slug: "hard-coded-scanning";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "ios-jailbreak-guide.md": {
 	id: "ios-jailbreak-guide.md";
   slug: "ios-jailbreak-guide";
