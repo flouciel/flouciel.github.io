@@ -9,38 +9,38 @@ tags:
   - application security
   - appsec
   - security
-description: "Think about managing the risks of hard-coded secrets."
+description: "Think about managing the risks of hard coded secrets."
 ---
 
 ## The Backstage
 
-If secrets are so sensitive, why do developers still hard-code them in the codebase? It's not because they aren't concerned about security, they understand the risks of exposed secrets. But real-world development is messy and often siloed, filled with challenges that make security an afterthought. We all have deep respect for our developers, they're incredibly smart and deeply knowledgeable about their code. Deadlines are tight, so many features are in the queue, debugging needs to be fast, and occasionally, developers just need to get things done. Security extra steps will be in the backlog with the seatbelt *"Will remove later"*.
+If secrets are so sensitive, why do developers still hard code them in the codebase? It's not because they aren't concerned about security, they understand the risks of exposed secrets. But real world development is messy and often siloed, filled with challenges that make security an afterthought. We all have deep respect for our developers, they're incredibly smart and deeply knowledgeable about their code. Deadlines are tight, so many features are in the queue, debugging needs to be fast, and occasionally, developers just need to get things done. Security extra steps will be in the backlog with the seatbelt *"Will remove later"*.
 
 ![sleep-meme](@assets/images/sleep-meme.png)
 
 ## It's not a bug, it's human nature
 
-Developers are wired to solve problems efficiently. Hard-coding a secret might feel like the simplest way to keep things moving. It happens for a few key reasons:
+Developers are wired to solve problems efficiently. Hard coding a secret might feel like the simplest way to keep things moving. It happens for a few key reasons:
 
 #### <span class="accent">A false sense of security</span>
 - *"It's just an internal repo"*
 - *"Only our team has access"*
-- *"It's buried deep in code—no one will find it"*
+- *"It's buried deep in code, no one will find it"*
 
-These assumptions feel reasonable until they're not. Internal repos can get exposed. Access controls can be broken. Your VCS environment can leak out. That AWS key you hard-coded for convenience? It's one leaked commit away from becoming a security nightmare.
+These assumptions feel reasonable until they're not. Internal repos can get exposed. Access controls can be broken. Your VCS environment can leak out. That AWS key you hard coded for convenience? It's one leaked commit away from becoming a security nightmare.
 
 #### <span class="accent">Speed versus Security </span>
 
-Hard-coding secrets makes things work now. And in a fast-moving development cycle, "now" often wins.
+Hard coding secrets makes things work now. And in a fast moving development cycle, "now" often wins.
 - Rapid prototyping? Just drop in an API key.
-- Debugging an issue? Hard-coded credentials to test faster.
+- Debugging an issue? Hard coded credentials to test faster.
 - Collaborating with teammates? Share keys in the code.
 		
 It's always meant to be temporary, until it isn't.
 
 #### <span class="accent">The unintentional mistake</span>
 
-Not all hard-coded secrets are intentional. Sometimes they sneak in:
+Not all hard coded secrets are intentional. Sometimes they sneak in:
 
 - Test credentials get left in the final commit.
 - Copied snippet from Stack Overflow or AI generated includes an embedded key.
@@ -52,23 +52,23 @@ No one means to leak secrets. But when security relies on remembering an extra s
 
 The worst part? We don't see the cost of a secret leak until it's leaked. Maybe nothing happens, until a hacker stumbles upon it, a service revokes your key, or an entire system is compromised.
 
-Hard-coding secrets isn't just a bad habit. It's a risk that grows silently until it [explodes](https://www.ibm.com/reports/data-breach).
+Hard coding secrets isn't just a bad habit. It's a risk that grows silently until it [explodes](https://www.ibm.com/reports/data-breach).
 
 ### How Do We Catch This?
 
 We don't just enforce security, we work _with_ developers, not against them. Security should integrate smoothly into the their daily SDLC which called AppSec processes without slowing teams down.
 
-#### A Real-World Example
+#### A Real World Example
 
 Let's say we're working at a **blitzscaling startup**, where the product is developing at lightning speed to hit MVP and keep up with agile demands. The focus is on shipping fast , not security
 
-- **Cost is minimal** – there’s no budget for fancy security tools like commercial SAST tools
-- **GitLab is self-hosted** – no built-in  security scanning.
-- **Developer habits** – secrets, API keys, and credentials are often committed directly to the code because it's “internal.”
+- **Cost is minimal** : there’s no budget for fancy security tools like commercial SAST tools
+- **GitLab is self-hosted** : no built-in  security scanning.
+- **Developer habits** : secrets, API keys, and credentials are often committed directly to the code because it's “internal.”
 
 Without expensive tools, we try to bake open source tool called Gitleaks into our CI/CD pipeline. We chose this for its customizable regex rules and speed. Here's what we propose with goals rolling our scanning at scale.
 
-In GitLab, each project has its own **`.gitlab-ci.yml`** file, defining its CI/CD pipeline. But managing security scans **project by project** doesn't scale well. We would need to manually add and update security rules in every repo - not happening.
+In GitLab, each project has its own **`.gitlab-ci.yml`** file, defining its CI/CD pipeline. But managing security scans **project by project** doesn't scale well. We would need to manually add and update security rules in every repo, not happening.
 
 Instead, we **leverage pipeline includes**. This works like importing a library in code: we define a **centralized security pipeline** in a dedicated repo and then include it in every project's **`.gitlab-ci.yml`**.
 

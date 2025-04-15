@@ -144,6 +144,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 .accent {
   color: rgba(var(--color-accent), 1);
 }
