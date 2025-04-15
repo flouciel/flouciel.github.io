@@ -9,7 +9,7 @@ tags:
   - Mobile
   - jailbreak
   - security
-description: "Switching from Android to iOS — goodbye root, any challenges and restrictions? How to break them."
+description: "Switching from Android to iOS, goodbye root, any challenges and restrictions? How to break them."
 ---
 
 Recently, just came back to conduct a security testing for our internal mobile apps at work. I needed to set up a testing environment, buy new devices, root them all, and do more. This is a quick wrap-up of what I did. Also, I’m biased toward the iFan, so I’m not sure if we’ll have a Android root series. I can’t promise.
