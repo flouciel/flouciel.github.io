@@ -10,6 +10,7 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  output: 'static',
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -74,8 +75,12 @@ export default defineConfig({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: '**.githubusercontent.com',
       },
+      {
+        protocol: 'https',
+        hostname: '**.github.io',
+      }
     ],
     service: {
       entrypoint: 'astro/assets/services/sharp',
