@@ -4,7 +4,7 @@ import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
-import pwa from "@vite-pwa/astro"; 
+import pwa from "@vite-pwa/astro";
 import { SITE } from "./src/config";
 
 // https://astro.build/config
@@ -42,9 +42,54 @@ export default defineConfig({
           },
         ],
       },
+      workbox: {
+        navigateFallback: '/',
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}'],
+        globIgnores: ['**/node_modules/**/*', '**/sw.js', '**/workbox-*.js'],
+        skipWaiting: true,
+        clientsClaim: true,
+        runtimeCaching: [
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images',
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+              }
+            }
+          }
+        ]
+      },
+      injectRegister: 'auto',
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
+      includeManifestIcons: false
     }),
   ],
-  
+
+  // Image optimization configuration
+  image: {
+    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        // Sharp options for image optimization
+        jpeg: { quality: 98, compressionLevel: 8 },
+        jpg: { quality: 98, compressionLevel: 8 },
+        png: { quality: 100, compressionLevel: 8 },
+        webp: { quality: 98, compressionLevel: 8 },
+        avif: { quality: 98, compressionLevel: 8 },
+      },
+    },
+  },
+
   markdown: {
     remarkPlugins: [
       remarkToc,

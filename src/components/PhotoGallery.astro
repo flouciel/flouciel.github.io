@@ -1,0 +1,356 @@
+---
+import { Image } from "astro:assets";
+import PhotoLightbox from "./PhotoLightbox.astro";
+
+export interface Props {
+  photos: {
+    src: ImageMetadata;
+    alt: string;
+    title: string;
+    description: string;
+    date?: string;
+    year?: string;
+    width?: number;
+    height?: number;
+  }[];
+}
+
+const { photos } = Astro.props;
+
+// Group photos by year
+const photosByYear = photos.reduce((acc, photo) => {
+  const year = photo.year || (photo.date ? photo.date.substring(0, 4) : '');
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(photo);
+  return acc;
+}, {} as Record<string, typeof photos>);
+
+// Sort years (newest first)
+const sortedYears = Object.keys(photosByYear)
+  .sort()
+  .reverse();
+
+// Format date for display
+function formatDate(dateStr: string) {
+  if (dateStr === 'unsorted') return 'Unsorted';
+  const [year, month] = dateStr.split('-');
+  const date = new Date(parseInt(year), parseInt(month) - 1);
+
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long'
+  });
+}
+
+// With masonry layout, we don't need to determine aspect ratio classes
+---
+
+<div class="photo-gallery-container">
+  {
+    photos.length > 0 ? (
+      sortedYears.map(year => (
+        <div class="year-section">
+          <h1 class="year-heading">{year}</h1>
+          <div class="photo-gallery">
+            {photosByYear[year].map((photo, index) => (
+              <div class="photo-item animate-on-scroll" data-title={photo.title} data-description={photo.description}>
+                <div class="photo-inner">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={photo.width || 1200}
+                    height={photo.height || 900}
+                    format="webp"
+                    quality={95}
+                    class="photo"
+                  />
+                  <div class="photo-overlay">
+                    <div class="photo-zoom-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="photo-caption">
+                    <p>{photo.title || photo.alt}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    ) : (
+      <div class="no-photos">
+        <p>No photos to display yet. Check back soon!</p>
+        <p class="help-text">
+          To add photos, place image files in the <code>src/assets/photos/</code> directory.
+        </p>
+      </div>
+    )
+  }
+</div>
+
+<!-- Lightbox for full-size image viewing -->
+<PhotoLightbox />
+
+<style>
+  .photo-gallery-container {
+    @apply w-full;
+  }
+
+  .year-section {
+    @apply mb-16;
+  }
+
+  .year-heading {
+    @apply text-3xl font-bold mb-8 pb-2 border-b border-skin-line;
+    animation: slideInFromLeft 0.6s ease-out forwards;
+    letter-spacing: 0.5px;
+  }
+
+  .photo-gallery {
+    @apply mt-6;
+    /* True CSS masonry layout with columns */
+    column-count: 4;
+    column-gap: 20px;
+    column-fill: balance; /* Try to balance column heights */
+  }
+
+  .photo-item {
+    @apply overflow-hidden rounded-xl shadow-sm relative;
+    break-inside: avoid; /* Prevent images from breaking across columns */
+    margin-bottom: 20px; /* Space between items */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s ease;
+    cursor: pointer;
+    display: block; /* Required for masonry layout */
+    width: 100%; /* Take full width of the column */
+    will-change: transform; /* Optimize for animations */
+  }
+
+  .photo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .photo-inner {
+    @apply relative overflow-hidden w-full h-full;
+    transform: translateZ(0); /* Force GPU acceleration */
+  }
+
+  .photo-item:hover {
+    @apply shadow-md z-10;
+  }
+
+  .photo-item:hover .photo-inner {
+    transform: scale(1.015);
+    transition: transform 0.3s ease;
+  }
+
+  .photo {
+    @apply w-full h-auto object-cover;
+    display: block;
+    transition: transform 0.5s ease;
+    backface-visibility: hidden; /* Prevents flickering in some browsers */
+  }
+
+  .photo.loaded {
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  /* We don't need aspect ratio classes with masonry layout */
+
+  .photo-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center;
+    transition: background-opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .photo-item:hover .photo-overlay {
+    @apply bg-opacity-30;
+  }
+
+  .photo-zoom-icon {
+    @apply w-10 h-10 rounded-full bg-white bg-opacity-90 flex items-center justify-center;
+    transform: scale(0);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .photo-zoom-icon svg {
+    @apply w-5 h-5 text-black;
+  }
+
+  .photo-item:hover .photo-zoom-icon {
+    transform: scale(1);
+  }
+
+  .photo-caption {
+    @apply absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-2 text-sm;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 3;
+  }
+
+  .photo-item:hover .photo-caption {
+    transform: translateY(0);
+  }
+
+  .photo-caption p {
+    @apply m-0 text-center;
+  }
+
+  .no-photos {
+    @apply text-center py-20 text-lg;
+  }
+
+  .help-text {
+    @apply text-sm mt-4 opacity-70;
+  }
+
+  code {
+    @apply bg-skin-card px-1 py-0.5 rounded text-sm;
+  }
+
+  /* Animation keyframes */
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 1600px) {
+    .photo-gallery {
+      column-count: 5; /* 5 columns on very large screens */
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .photo-gallery {
+      column-count: 3; /* 3 columns on medium screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .photo-gallery {
+      column-count: 2; /* 2 columns on tablets */
+    }
+  }
+
+  @media (max-width: 640px) {
+    .photo-gallery {
+      column-count: 1; /* Single column on mobile */
+    }
+
+    .year-heading {
+      @apply text-2xl;
+    }
+
+    .photo-zoom-icon {
+      @apply w-10 h-10;
+    }
+
+    .photo-zoom-icon svg {
+      @apply w-5 h-5;
+    }
+  }
+</style>
+
+<script>
+  // Handle scroll animations for masonry layout
+  function handleScrollAnimations() {
+    const animatedItems = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Add the visible class when the element is in the viewport
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Unobserve after animation is triggered
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null, // viewport
+      threshold: 0.1, // 10% of the item must be visible
+      rootMargin: '0px 0px -50px 0px' // Trigger a bit before the item is in view
+    });
+
+    // Observe each item
+    animatedItems.forEach(item => {
+      observer.observe(item);
+    });
+  }
+
+  // Stagger the animations for a more pleasing effect
+  function staggerAnimations() {
+    const galleries = document.querySelectorAll('.photo-gallery');
+
+    galleries.forEach(gallery => {
+      const items = gallery.querySelectorAll('.photo-item');
+
+      items.forEach((item, index) => {
+        // Add a staggered delay to each item
+        item.style.transitionDelay = `${index * 50}ms`;
+      });
+    });
+  }
+
+  // Ensure images load properly in the masonry layout
+  function setupMasonryLayout() {
+    const images = document.querySelectorAll('.photo-item img');
+
+    images.forEach(img => {
+      // When each image loads, trigger a small resize to help the layout adjust
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        });
+      }
+    });
+  }
+
+  // Initialize all functionality
+  function initPhotoGallery() {
+    handleScrollAnimations();
+    staggerAnimations();
+    setupMasonryLayout();
+  }
+
+  // Initial setup
+  document.addEventListener('DOMContentLoaded', initPhotoGallery);
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    // No special handling needed for masonry layout on resize
+    // CSS handles the column count changes
+  });
+
+  // When all images are loaded
+  window.addEventListener('load', initPhotoGallery);
+
+  // For Astro view transitions
+  document.addEventListener('astro:after-swap', initPhotoGallery);
+</script>
