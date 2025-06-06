@@ -105,7 +105,7 @@ export default defineConfig({
         runtimeCaching: [
           {
             urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'images',
               expiration: {
@@ -136,12 +136,10 @@ export default defineConfig({
               }
             }
           }
-        ]
+        ],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024 // Increase cache limit to 5MB
       },
-      injectRegister: 'auto',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
-      includeManifestIcons: true,
-      strategies: 'injectManifest'
+      strategies: 'generateSW'
     }),
   ],
 

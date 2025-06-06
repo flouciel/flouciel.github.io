@@ -148,10 +148,10 @@ async function processImage(inputPath) {
       } else {
         // Normal resize for other images
         image.resize({
-          width: Math.min(maxWidth, metadata.width),
-          height: Math.min(maxHeight, metadata.height),
-          fit: 'inside',
-          withoutEnlargement: true
+        width: Math.min(maxWidth, metadata.width),
+        height: Math.min(maxHeight, metadata.height),
+        fit: 'inside',
+        withoutEnlargement: true
         });
       }
     }
