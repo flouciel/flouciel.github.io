@@ -10,7 +10,7 @@ tags:
   - security
   - telegram
   - TIL
-description: "TIL: Learn how I stay up-to-date with tech and what resources I used to grow to ."
+description: "TIL: Learn how I stay up-to-date with tech and what resources I used to grow to."
 ---
 
 The Internet is flooded with content, materials, and resources. It's tough to find the most useful newsletters, blogs, creators while keeping everything centralized, simple, and minimal. 
