@@ -342,7 +342,13 @@ function formatDate(dateStr: string) {
     });
 
     animatedItems.forEach(item => {
-      observer.observe(item);
+      // Check if item is already in viewport on initial load
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        item.classList.add('visible');
+      } else {
+        observer.observe(item);
+      }
     });
   }
 
@@ -420,9 +426,7 @@ function formatDate(dateStr: string) {
   function initPhotoGallery() {
     console.log('Initializing photo gallery script');
     handleScrollAnimations();
-    // Delay image loading setup slightly to ensure elements are rendered
-    // A very short delay can sometimes help ensure elements exist before querying
-    setTimeout(handleImageLoading, 50);
+    handleImageLoading();
   }
 
   // Initial setup on DOMContentLoaded
