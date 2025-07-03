@@ -1,5 +1,5 @@
 ---
-title: How to Acquiring IPA File
+title: How to Acquiring iOS IPA
 author: Hazy
 pubDatetime: 2024-05-02
 featured: false
@@ -9,23 +9,24 @@ tags:
   - Mobile
   - IPA
   - security
-description: "The title says it all."
+description: "How to get the IPA file for securuty testing"
 ---
 
-#### TL;DR:
-In a straightforward way, I'll tell you a secret to obtaining IPA files the right way: "Ask your mobile developer".
+## TL;DR:
+Want the IPA file of an iOS app? Here’s the *realest* advice:
 
-*Joke, but true.*
+> **Ask your mobile developer.**  
+> *(Not a joke. But also a joke.)*
 
-In mobile security audits, clients and developers usually hand over the IPA file directly. They might email it to you or provide access through development-focused distribution channels like TestFlight or Visual Studio App Center.
+In mobile security audits, clients and developers usually hand over the IPA file directly. They might email it to you or share it through development-focused distribution platforms like TestFlight or Visual Studio App Center or Firebase App Distribution, it all depend on their workflow.
 
-But if you're working on your own side project and the app is only available on the App Store, you'll need to explore alternative ways to acquire the IPA:
+But if you're doing on your own testing, maybe a side project or a public app, then you'll need to go to the other route.
 
-> https://github.com/majd/ipatool
+## Method 1: Pul from the App Store 
 
-### Installation: 
+[ipatool](https://github.com/majd/ipatool) is a command-line tool that lets you download IPA files directly from the App Store using your Apple ID.
 
-Via Homebrew
+### Installation (Mac Homebrew)
 
 ``` shell
 $ brew tap majd/repo
@@ -33,7 +34,8 @@ $ brew install ipatool
 ```
 ### Usage:
 
-Must use the Apple ID credential
+Need your Apple ID credential to help this tool authenticate just like a real App Store client.
+
 ![ipatool-cli](@assets/images/2024-10-15-15-32-00.png)
 
 ``` shell
@@ -41,13 +43,18 @@ $ ipatool auth
 $ ipatool search Spotify
 $ ipatool download -b com.spotify.client -o spotify.ipa
 ```
-## if you need extract IPA from jailbroken device 
+## Method 2: Extract from Jailbroken Device
 
-The traditional method to extract decrypted IPA files from a jailbroken iOS device involves using frida-ios-dump. This tool relies on Frida to dump and decrypt apps directly from the device.
+If you have access to a jailbroken device, you can extract the IPA directly from the system where it's decrypted and ready for inspection.
+
+### Opt A: Frida-ios-dump
+This tool uses Frida under the hood to dump decrypted versions of apps from the device.
 
 > https://github.com/AloneMonkey/frida-ios-dump
 
-But I encountered many issues when dealing with this tool, hence I switch to Bagbak
+Note: This method can be fragile depending on iOS version, device, and Frida compatibility. I encountered many issues when dealing with this tool, hence try opt B which is a great alternative, more stable. 
+
+### Opt B: Bagbak
 
 > https://github.com/ChiChou/bagbak
 
