@@ -107,7 +107,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply pb-6 pt-8;
   }
   #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    @apply my-6 inline-block text-3xl font-bold sm:my-8 sm:text-5xl font-serif leading-tight;
+    line-height: 1.2;
   }
   #hero .rss-link {
     @apply mb-6;
@@ -128,11 +129,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #recent-posts {
-    @apply pb-6 pt-12;
+    @apply pb-8 pt-16;
   }
   #featured h2,
   #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
+    @apply text-xl font-bold tracking-wide font-serif mb-8;
+    line-height: 1.4;
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;

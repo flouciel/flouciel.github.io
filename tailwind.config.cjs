@@ -55,7 +55,8 @@ module.exports = {
       },
       fontFamily: {
         mono: ["IBM Plex Mono", "monospace"],
-        sans: ["Albert Sans", "ui-sans-serif", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "sans-serif"],
+        sans: ["Merriweather", "serif"],
+        serif: ["Merriweather", "serif"],
       },
 
       typography: {

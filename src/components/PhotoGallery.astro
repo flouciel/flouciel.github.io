@@ -136,9 +136,22 @@ function formatDate(dateStr: string) {
   }
 
   .year-heading {
-    @apply text-3xl font-bold mb-8 pb-2 border-b border-skin-line;
+    @apply text-4xl font-bold mb-8 pb-4 border-b border-skin-line font-serif tracking-tight text-center;
     animation: slideInFromLeft 0.6s ease-out forwards;
     letter-spacing: 0.5px;
+    position: relative;
+  }
+
+  .year-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 3px;
+    background: var(--color-accent);
+    opacity: 0.2;
   }
 
   .photo-gallery {
@@ -196,13 +209,12 @@ function formatDate(dateStr: string) {
   }
 
   .loading-placeholder {
-    @apply absolute inset-0 flex items-center justify-center;
-    background: #f0f0f0;
+    @apply absolute inset-0 flex items-center justify-center bg-skin-card;
     transition: opacity 0.3s ease;
   }
 
   .loading-spinner {
-    @apply w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full;
+    @apply w-8 h-8 border-4 border-gray-300 border-t-black rounded-full;
     animation: spin 1s linear infinite;
   }
 
@@ -246,7 +258,7 @@ function formatDate(dateStr: string) {
   }
 
   .photo-caption {
-    @apply absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-2 text-sm;
+    @apply absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-3 text-sm font-serif;
     transform: translateY(100%);
     transition: transform 0.3s ease;
     z-index: 3;

@@ -57,22 +57,22 @@ const { activeNav } = Astro.props;
         <ul id="menu-items" class="display-none sm:flex">
           <li>
             <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
-              Posts
+              posts
             </a>
           </li>
           <li>
             <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
-              Tags
+              tags
             </a>
           </li>
           <li>
             <a href="/about/" class={activeNav === "about" ? "active" : ""}>
-              About
+              about
             </a>
           </li>
           <li>
             <a href="/photos/" class={activeNav === "photos" ? "active" : ""}>
-              Photos
+              photos
             </a>
           </li>
           <li>
@@ -126,15 +126,16 @@ const { activeNav } = Astro.props;
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
   .nav-container {
-    @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
+    @apply mx-auto flex max-w-4xl flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+    @apply relative flex w-full items-center justify-between px-6 py-4 sm:px-8 sm:py-6;
   }
   .logo {
-    @apply absolute py-1 text-5xl sm:static sm:text-2xl;
+    @apply py-1 text-4xl sm:text-3xl;
     font-family: 'Dune';
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    line-height: 1;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
@@ -147,13 +148,13 @@ const { activeNav } = Astro.props;
     @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
   }
   nav ul {
-    @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0;
+    @apply mt-6 grid w-48 grid-cols-1 gap-y-1 sm:ml-0 sm:mt-0 sm:w-auto sm:flex sm:flex-row sm:gap-x-6 sm:gap-y-0;
   }
   nav ul li {
-    @apply col-span-2 flex items-center justify-center;
+    @apply flex items-center justify-center;
   }
   nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    @apply w-full px-6 py-4 text-center font-normal hover:text-skin-accent sm:my-0 sm:px-3 sm:py-2 font-serif transition-all duration-200 min-h-[48px] flex items-center justify-center rounded-md hover:bg-skin-card;
   }
   nav ul li:nth-last-child(2) a {
     @apply w-auto;
@@ -163,7 +164,7 @@ const { activeNav } = Astro.props;
     @apply col-span-1;
   }
   nav a.active {
-    @apply underline decoration-wavy decoration-2 underline-offset-4;
+    @apply font-medium;
   }
   nav a.active svg {
     @apply fill-skin-accent;
