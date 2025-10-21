@@ -99,7 +99,7 @@ const layoutProps = {
 
       <ShareLinks />
     </div>
-    <Comments />
+    <Comments title={title} slug={post.slug} />
   </main>
   <Footer />
 </Layout>
@@ -215,8 +215,11 @@ const layoutProps = {
    * the "Back to Top" button is clicked. */
   function backToTop() {
     document.querySelector("#back-to-top")?.addEventListener("click", () => {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      // Use smooth scrolling for better UX
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   }
   backToTop();

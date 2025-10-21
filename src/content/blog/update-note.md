@@ -1,11 +1,11 @@
 ---
-title: Just a Quick Update
-author: Hazy
-pubDatetime: 2025-07-02
+title: "Quick Update: Photo Page and Favoriq Bookmark"
+author: "Hazy"
+pubDatetime: 2025-07-02T00:00:00.000Z
 featured: false
 draft: false
 tags:
-  - Photos
+  - photos
   - Side Projects
   - Bookmarks
   - Digital Minimalism
@@ -18,7 +18,7 @@ Haven’t written here in a while. Life’s been busy in the usual way, but also
 
 ## A Small Photo Page
 
-I finally added a [photo page](/photos) to the site. Nothing big, just a few of my favorite shots. Felt like I wanted a quieter place to collect the ones that still feel good after a while.
+I finally added a [photo page](/photos) to the site. Nothing big, just a few of my favorite shots. Feel like I wanted a quieter place to collect the ones that still feel good after a while.
 
 It’s inspired by [Anthony Fu’s site](https://antfu.me/photos), which I’ve always liked for how calm and honest it feels. I’m not a photographer or anything. Just enjoy taking quick shots here and there, mostly with my old Pixel phone. I switched to an iPhone not long ago, but honestly I don’t really like how the photos turn out. Most of the stuff I liked came from that old Pixel.
 

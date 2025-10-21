@@ -16,38 +16,38 @@
     "generate-pwa-icons": "node scripts/generate-pwa-icons.js"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
+    "@astrojs/react": "^4.4.0",
     "@astrojs/rss": "4.0.12",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^5.10.1",
+    "astro": "^5.14.7",
     "fuse.js": "^7.1.0",
     "github-slugger": "^2.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "satori": "^0.10.14",
-    "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.17",
-    "vite-plugin-pwa": "^1.0.0"
+    "satori": "^0.18.3",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^3.4.18",
+    "vite-plugin-pwa": "^1.1.0"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "3.4.1",
+    "@astrojs/sitemap": "3.6.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@divriots/jampack": "^0.33.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/github-slugger": "^1.3.0",
-    "@types/react": "^18.3.20",
-    "@vite-pwa/astro": "^0.5.0",
+    "@divriots/jampack": "^0.34.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/react-dom": "^19.2.2",
+    "@types/react": "^19.2.2",
+    "@vite-pwa/astro": "^1.1.1",
     "autoprefixer": "^10.4.21",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.24.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.5.1",
-    "postcss": "^8.5.4",
-    "prettier": "^3.5.3",
-    "vite": "^5.4.19"
+    "eslint": "^9.38.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.5",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "vite": "^7.1.11"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,mdx,json,astro}": [
@@ -56,7 +56,10 @@
   },
   "pnpm": {
     "overrides": {
-      "esbuild": "^0.25.0"
+      "esbuild": "^0.25.0",
+      "quicklink>react": "^19.2.0",
+      "quicklink>react-dom": "^19.2.0",
+      "tmp": "^0.2.4"
     },
     "ignoredBuiltDependencies": [
       "esbuild"
