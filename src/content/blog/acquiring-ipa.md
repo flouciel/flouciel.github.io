@@ -6,9 +6,8 @@ featured: false
 draft: false
 tags:
   - iOS
-  - Mobile
-  - IPA
-  - security
+  - mobsec
+  - appsec
 description: "How to get the IPA file for securuty testing"
 ---
 

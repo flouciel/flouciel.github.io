@@ -6,9 +6,8 @@ featured: false
 draft: false
 tags:
   - iOS
-  - Mobile
-  - ipa
-  - security
+  - mobsec
+  - appsec
 description: "Breaking down the basics of IPA structure, know what you're testing before you dive in."
 ---
 

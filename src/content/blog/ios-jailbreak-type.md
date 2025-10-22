@@ -6,9 +6,9 @@ featured: false
 draft: false
 tags:
   - iOS
-  - Mobile
+  - mobsec
   - jailbreak
-  - security
+  - appsec
 description: "Jailbreaking an iPhone refers to bypassing the restrictions and limitations set by Apple's iOS."
 ---
 

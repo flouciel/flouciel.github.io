@@ -6,9 +6,9 @@ featured: false
 draft: false
 tags:
   - iOS
-  - Mobile
+  - mobsec
   - jailbreak
-  - security
+  - appsec
 description: "Switching from Android to iOS, goodbye root, any challenges and restrictions? How to break them."
 ---
 

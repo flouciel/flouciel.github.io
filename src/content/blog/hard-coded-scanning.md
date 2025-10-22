@@ -6,9 +6,7 @@ featured: false
 draft: false
 tags:
   - secrets scanning
-  - application security
   - appsec
-  - security
   - trufflehog
   - gitleaks
 description: "Think about managing the risks of hard coded secrets."

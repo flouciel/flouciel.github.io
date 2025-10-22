@@ -6,9 +6,7 @@ featured: false
 draft: false
 tags:
   - threat modeling
-  - application security
   - appsec
-  - security
 description: "Threat modeling is a proactive approach to identifying vulnerabilities and implementing effective security measures."
 ---
 
