@@ -23,4 +23,13 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+// Markdown notes for photos, one file per photo
+const photoNotes = defineCollection({
+  type: "content",
+  schema: z.object({
+    photoId: z.string(),          // matches photo filename (without extension)
+    title: z.string().optional(), // optional override title
+  }),
+});
+
+export const collections = { blog, photoNotes };

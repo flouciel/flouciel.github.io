@@ -176,18 +176,16 @@ async function processImage(inputPath) {
     const outputSize = outputBuffer.byteLength;
     const compressionRatio = (outputSize - inputSize) / inputSize;
 
-    // Skip if compression ratio is less than 5%
-    if (compressionRatio > -0.05) {
-      stats.skipped++;
-      colorLog(colors.dim, `[SKIP] ${bytesToHuman(inputSize)} → ${bytesToHuman(outputSize)} ${(compressionRatio * 100).toFixed(1).padStart(5, ' ')}%  ${path.basename(inputPath)}`);
-      return;
-    }
-
-    // Write optimized image
+    // Always write the optimized WebP, even if the size saving is small
     await fs.writeFile(outputPath, outputBuffer);
     stats.processed++;
     stats.totalSaved += (inputSize - outputSize);
-    colorLog(colors.green, `[COMP] ${bytesToHuman(inputSize)} → ${bytesToHuman(outputSize)} ${(compressionRatio * 100).toFixed(1).padStart(5, ' ')}%  ${path.basename(inputPath)}`);
+    colorLog(
+      colors.green,
+      `[COMP] ${bytesToHuman(inputSize)} → ${bytesToHuman(outputSize)} ${(compressionRatio * 100)
+        .toFixed(1)
+        .padStart(5, ' ')}%  ${path.basename(inputPath)}`
+    );
 
     // Remove original if it's not a webp
     if (!inputPath.toLowerCase().endsWith('.webp')) {

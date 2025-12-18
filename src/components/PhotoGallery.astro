@@ -8,6 +8,8 @@ export interface Props {
     alt: string;
     title: string;
     description: string;
+    notes?: string;
+    notesTitle?: string;
     date?: string;
     year?: string;
     width?: number;
@@ -63,7 +65,13 @@ function formatDate(dateStr: string) {
     photos.length > 0 ? (
       <div class="photo-gallery">
         {sortedPhotos.map((photo, index) => (
-          <div class="photo-item animate-on-scroll" data-title={photo.title} data-description={photo.description}>
+          <div
+            class="photo-item animate-on-scroll"
+            data-title={photo.title}
+            data-description={photo.description}
+            data-notes={photo.notes || ""}
+            data-notes-title={photo.notesTitle || ""}
+          >
             <div class="photo-inner">
               <div class="image-wrapper">
                 <Image

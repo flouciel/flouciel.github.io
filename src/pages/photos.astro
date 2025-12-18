@@ -5,13 +5,36 @@ import Footer from "@components/Footer.astro";
 import PhotoLayout from "@layouts/PhotoLayout.astro";
 import PhotoGallery from "@components/PhotoGallery.astro";
 import importPhotos from "../utils/importPhotos.js";
+import { getCollection } from "astro:content";
 
 // Import all photos from the photos directory
 // This will automatically import all images from the photos directory
 const photos = await importPhotos();
 
+// Load markdown notes for photos
+const photoNotes = await getCollection("photoNotes");
+
+// Map notes by photoId for quick lookup
+const notesByPhotoId = new Map(
+  photoNotes.map((entry) => [entry.data.photoId, entry])
+);
+
+// Attach notes body to matching photos (by filename without extension)
+const photosWithNotes = photos.map((photo) => {
+  const srcPath = photo.src.src || "";
+  const filename = srcPath.split("/").pop() || "";
+  const photoId = filename.split(".")[0];
+  const noteEntry = notesByPhotoId.get(photoId);
+
+  return {
+    ...photo,
+    notes: noteEntry ? noteEntry.body : "",
+    notesTitle: noteEntry?.data.title ?? photo.title,
+  };
+});
+
 // Sort photos by date (newest first)
-photos.sort((a, b) => {
+photosWithNotes.sort((a, b) => {
   // First try to sort by the date property
   if (a.date && b.date) {
     return b.date.localeCompare(a.date);
@@ -26,7 +49,7 @@ photos.sort((a, b) => {
 <Layout title="Photos | l.u.n.e">
   <Header activeNav="photos" />
   <PhotoLayout pageTitle="Photos" pageDesc="A collection of moments captured through my lens.">
-    <PhotoGallery photos={photos} />
+    <PhotoGallery photos={photosWithNotes} />
   </PhotoLayout>
   <Footer />
 </Layout>
