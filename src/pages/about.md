@@ -3,9 +3,11 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
+Notes: I’m open to remote opportunities or relocation to a European country. I’m also eligible for a French Job Seeker Visa and the EU Blue Card pathway.
+
 It takes curiosity to learn and courage to unlearn. Stay enthusiastic about lifelong learning.
 
-Stay here with some redact information. For full resume, shoot me a dm or reach out via the links at footer.
+Stay here for some redacted information. For my full resume, please visit [this link](/tristan_Resume.pdf) and my [cover letter](/tristan_cover_letter.pdf); if you're interested and would like to chat, shoot me a DM or reach out via the links in the footer.
 
 ### Professional Experience
 
@@ -22,8 +24,8 @@ __A TechHub - Banking and Fintech Domain__
 
 __A French Startup Company__
 
-- Implemented commercial EDR solution (MDE), and tested the detection and prevention capacity.
-- Performed adversary emulation to simulate real attacks (Atomic Red Team, Caldera) in order to trigger security alerts, then analyzed and determined proactive mitigation efforts.
+- Implemented a commercial EDR solution (MDE) and tested its detection and prevention capabilities.
+- Performed adversary emulation to simulate real attacks (Atomic Red Team, Caldera) to trigger security alerts, then analyzed results and determined proactive mitigation efforts.
 - Performed penetration testing of an internal application, identifying 10+ security issues and providing prioritized recommendations to remediate vulnerabilities.
 
 `A year` | `Application Security Specialist`
@@ -31,15 +33,15 @@ __A French Startup Company__
 __An Outsourcing Company.__ 
 
 - Performed security assessments for a global biopharma company, implementing SAST and SCA integrated into SDLC.
-- Performed Dynamic Application Security Testing (DAST) scans for 150+ internal web apps of a US-based client quarterly, identifying 200 vulnerabilities on average, including on-demand scanning. Created tickets and provided prioritized recommendations to resolve all high and medium severity issues with developer team.
-- Joined as part of an R&D team, conducted PoC and training of security products including HCL AppSec variants, Rapid7 Appspider ... 
+- Performed Dynamic Application Security Testing (DAST) scans for 150+ internal web apps of a US-based client quarterly, identifying an average of 200 vulnerabilities, including on-demand scanning. Created tickets and provided prioritized recommendations to resolve all high and medium severity issues with the developer team.
+- Joined as part of an R&D team, conducted PoCs and training for security products including HCL AppSec variants, Rapid7 Appspider, and others. 
 
 `Nearly 3 years` | `Cyber Security Consultant`
 
 __A Consulting Company__
 
 - Delivered penetration testing (web/mobile) services for clients across industries including banking, hospitality, oil and energy, aviation, outsourcing.
-- Conducted a Threat-Led penetration test for a client utilizing an internal CTI tool and OSINT that helped for initial access of the project.
+- Conducted a threat-led penetration test for a client using an internal CTI tool and OSINT that helped with initial access for the project.
 - Performed risk assessments by conducting client interviews and reviewing findings using the Cyber Security Assessment Program (CPA) across 10 ITSM domains. Generated reports documenting findings, risk scores, and prioritized remediation recommendations mapped to ISO27001 and NIST frameworks.
 
 ### Academic Background

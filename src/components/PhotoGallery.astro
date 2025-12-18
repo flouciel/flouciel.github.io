@@ -19,22 +19,16 @@ const { photos } = Astro.props;
 
 console.log('PhotoGallery received photos:', photos.length);
 
-// Group photos by year
-const photosByYear = photos.reduce((acc, photo) => {
-  const year = photo.year || (photo.date ? photo.date.substring(0, 4) : '');
-  if (!acc[year]) {
-    acc[year] = [];
-  }
-  acc[year].push(photo);
-  return acc;
-}, {} as Record<string, typeof photos>);
+// Sort photos from latest to oldest
+const sortedPhotos = [...photos].sort((a, b) => {
+  const aDate = a.date || a.year || '';
+  const bDate = b.date || b.year || '';
 
-// Sort years (newest first)
-const sortedYears = Object.keys(photosByYear)
-  .sort()
-  .reverse();
-
-console.log('Grouped photos by year:', Object.keys(photosByYear));
+  // Newest first
+  if (aDate < bDate) return 1;
+  if (aDate > bDate) return -1;
+  return 0;
+});
 
 // Remove preloadedImages as we will rely on lazy loading
 // const preloadImages = photos.slice(0, 6);
@@ -67,48 +61,43 @@ function formatDate(dateStr: string) {
 <div class="photo-gallery-container">
   {
     photos.length > 0 ? (
-      sortedYears.map(year => (
-        <div class="year-section">
-          <h1 class="year-heading">{year}</h1>
-          <div class="photo-gallery">
-            {photosByYear[year].map((photo, index) => (
-              <div class="photo-item animate-on-scroll" data-title={photo.title} data-description={photo.description}>
-                <div class="photo-inner">
-                  <div class="image-wrapper">
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt}
-                      width={photo.width || 1200}
-                      height={photo.height || 900}
-                      format="webp"
-                      quality={95}
-                      class="photo"
-                      loading="eager" // Set all images to eager load
-                      decoding="async"
-                    />
-                    <div class="loading-placeholder">
-                      <div class="loading-spinner"></div>
-                    </div>
-                  </div>
-                  <div class="photo-overlay">
-                    <div class="photo-zoom-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        <line x1="11" y1="8" x2="11" y2="14"></line>
-                        <line x1="8" y1="11" x2="14" y2="11"></line>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="photo-caption">
-                    <p>{photo.title || photo.alt}</p>
-                  </div>
+      <div class="photo-gallery">
+        {sortedPhotos.map((photo, index) => (
+          <div class="photo-item animate-on-scroll" data-title={photo.title} data-description={photo.description}>
+            <div class="photo-inner">
+              <div class="image-wrapper">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={photo.width || 1200}
+                  height={photo.height || 900}
+                  format="webp"
+                  quality={95}
+                  class="photo"
+                  loading="eager" // Set all images to eager load
+                  decoding="async"
+                />
+                <div class="loading-placeholder">
+                  <div class="loading-spinner"></div>
                 </div>
               </div>
-            ))}
+              <div class="photo-overlay">
+                <div class="photo-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="photo-caption">
+                <p>{photo.title || photo.alt}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      ))
+        ))}
+      </div>
     ) : (
       <div class="no-photos">
         <p>No photos to display yet. Check back soon!</p>

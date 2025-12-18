@@ -23,7 +23,7 @@ Being in cybersecurity, I need to keep up with the industry trends, latest threa
 
 ### <span class="accent">Complication</span>
 
-The first challenge I encountered was information overload. The cybersecurity landscape is continuously changing, with new vulnerabilities and attacks being popping up daily. While I understood the value of remaining informed, the sheer amount of information made it overwhelming to keep up. 
+The first challenge I encountered was information overload. The cybersecurity landscape is constantly changing, with new vulnerabilities and attacks popping up daily. While I understood the value of staying informed, the sheer amount of information made it overwhelming to keep up. 
 
 Here’s a quick rundown of the challenges I faced:
 
@@ -50,9 +50,9 @@ This has its pros and cons. It’s straightforward and helps me get things done 
 
 #### 2. Telegram Bot. 
 
-The second, and I think much better is using a bot to automatically send notifications from my curated list of resources. Telegram is my favorite tool and one I use daily, so it make perfect sense to make it a platform for my knowledge hub.
+The second option, and I think the better one, is using a bot to automatically send notifications from my curated list of resources. Telegram is my favorite tool and one I use daily, so it makes perfect sense to use it as a platform for my knowledge hub.
 
-Here's how it setup:
+Here's how to set it up:
 
 1. Create a Telegram bot via [BotFather](https://t.me/botfather)
 2. Using [RSStT](https://github.com/Rongronggg9/RSS-to-Telegram-Bot).
@@ -96,16 +96,16 @@ Here are some of the security resources I follow
 | [CramHacks](https://www.cramhacks.com/)                                       | https://rss.beehiiv.com/feeds/uGY9n2H0Mg.xml |
 
 
-In this channel, paste the bellow command
+In this channel, paste the command below
 ```bash
 /sub <above_RSS_list>
 /activate_subs
 ```
 
 #### <span class="accent">The Result</span>
-Now, I have a fully automated system that delivers real-time security updates directly to my Telegram channel, eliminating the need to manually check websites or emails. The Telegram bot streamlines everything, ensuring I never miss an important security update. This setup has significantly improved my efficiency and keeps me constantly informed about the latest cybersecurity news.
+Now I have a fully automated system that delivers real-time security updates directly to my Telegram channel. No more manually checking websites or emails. The Telegram bot handles everything, so I never miss an important security update. This setup has made a huge difference in how I stay informed about the latest cybersecurity news.
 
-<span class="accent">If you're interested with my channel. You can find and follow it [here](https://t.me/tldrsecurity).</span>
+<span class="accent">If you're interested in my channel, you can find and follow it [here](https://t.me/tldrsecurity).</span>
 
 Thanks for reading!
 

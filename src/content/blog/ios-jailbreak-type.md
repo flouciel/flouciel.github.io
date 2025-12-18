@@ -1,5 +1,5 @@
 ---
-title: Thoughts on Jailbreak
+title: iPhone Jailbreaking Notes
 author: Hazy
 pubDatetime: 2024-10-14
 featured: false
@@ -9,16 +9,17 @@ tags:
   - mobsec
   - jailbreak
   - appsec
-description: "Jailbreaking an iPhone refers to bypassing the restrictions and limitations set by Apple's iOS."
+description: "A simple, laid-back look at what jailbreaking really is and why people bother doing it."
 ---
+## Table of contents
 
-## Why Need to Jailbreak
+## Why Jailbreak?
 ### Apple’s App Sandbox
 
-On iOS, every app operates within its own sandbox, ensuring it can only access data stored in its unique home directory. If an app needs to access data outside its directory - like files in iCloud or photos - it must use specific iOS services. This sandboxing means that other apps can't read or alter your app's data, keeping it secure and isolated.
+On iOS, every app operates within its own sandbox, ensuring it can only access data stored in its unique home directory. If an app needs to access data outside its directory, like files in iCloud or photos, it must use specific iOS services. This sandboxing means that other apps can't read or alter your app's data, keeping it secure and isolated.
 ![app-sandbox](@assets/images/2024-10-15-11-31-39.png)
 
-Apple’s App Sandbox leverages UNIX user permissions to ensure apps run with the less privileged <span class="accent">"mobile"</span> user. Anything outside the app’s home directory is mounted as read-only. 
+Behind the scenes, Apple uses UNIX-style permissions so apps run as a low-privileged user called mobile. Anything outside their home folder is basically locked down as read-only. 
 iOS includes robust measures to prevent memory-related security vulnerabilities. One key method is <span class="accent">Address Space Layout Randomization (ASLR)</span>, which randomizes the memory regions assigned to each app every time it starts. This makes it much harder for attackers to exploit memory corruption bugs. Additionally, memory pages are marked as non-executable using <span class="accent">ARM’s Execute Never (XN)</span> feature, which prevents malicious code from being executed
 
 ### Benefits of Jailbreak
@@ -52,7 +53,7 @@ Here is a useful article which will explain the differences between a real devic
 Not all jailbreaks work in the same way. This page will take you through each type of jailbreak and explain how they work.
 (This section is copied from [ios.cfw.guide](https://ios.cfw.guide))
 ### 1. Untethered Jailbreaks
-Untethered jailbreaks can be considered the holy grail of all jailbreaks. They only require the exploit to be ran once either via a website, an app or a computer.
+Untethered jailbreaks can be considered the holy grail of all jailbreaks. They only require the exploit to be run once, either via a website, an app, or a computer.
 ![untethe](@assets/images/2024-10-15-13-52-54.png)
 
 After that, your device is fully jailbroken and won't require any further action. The exploit will stay on a device even after you reboot it.
@@ -64,11 +65,11 @@ A few examples of untethered jailbreaks are p0sixspwn and Pangu9.
 Semi-untethered jailbreaks have been the most popular type of jailbreak in recent years. This type of jailbreak requires an exploit to be executed every time you reboot or turn off your device.
 ![semi-unte](@assets/images/2024-10-15-13-53-10.png)
 
-This jailbreak works by running the exploit through an app or website on the device itself. Due to the nature of how the exploit is ran, however, these jailbreaks are easily removable through their respective app.
+This jailbreak works by running the exploit through an app or website on the device itself. Due to the nature of how the exploit is run, however, these jailbreaks are easily removable through their respective app.
 A few examples of semi-untethered jailbreaks include Taurine, Dopamine, and Odyssey.
 
 ### 3. Semi-Tethered Jailbreaks
-Semi-tethered jailbreaks are very similar to semi-untethered jailbreaks, however the exploit must be ran using a computer rather than using a sideloaded app.
+Semi-tethered jailbreaks are very similar to semi-untethered jailbreaks, however the exploit must be run using a computer rather than using a sideloaded app.
 ![semi-te](@assets/images/2024-10-15-13-53-27.png)
 
 Due to requiring a computer to rejailbreak after every reboot, most choose to use a semi-untethered jailbreak instead.

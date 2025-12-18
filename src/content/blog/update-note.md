@@ -18,13 +18,13 @@ Haven’t written here in a while. Life’s been busy in the usual way, but also
 
 ## A Small Photo Page
 
-I finally added a [photo page](/photos) to the site. Nothing big, just a few of my favorite shots. Feel like I wanted a quieter place to collect the ones that still feel good after a while.
+I finally added a [photo page](/photos) to the site. Nothing big, just a few of my favorite shots. I wanted a quieter place to collect the ones that still feel good after a while.
 
 It’s inspired by [Anthony Fu’s site](https://antfu.me/photos), which I’ve always liked for how calm and honest it feels. I’m not a photographer or anything. Just enjoy taking quick shots here and there, mostly with my old Pixel phone. I switched to an iPhone not long ago, but honestly I don’t really like how the photos turn out. Most of the stuff I liked came from that old Pixel.
 
-I do have a [Pinterest](https://www.pinterest.com/hazymaybelazy/_created/) page. I like how it looks that masonry layout, the way it flows, the calm vibe it gives off. But some of the features kind of suck. Haven’t uploaded anything new to Pinterest in a while. Hazy maybe lazy. Either way, the page is still up.
+I do have a [Pinterest](https://www.pinterest.com/hazymaybelazy/_created/) page. I like how that masonry layout looks, the way it flows, the calm vibe it gives off. But some of the features kind of suck. Haven't uploaded anything new to Pinterest in a while. Hazy maybe lazy. Either way, the page is still up.
 
-Thinking about upgrading my gear sometime this year. Not sure yet, but if I do, maybe there’ll be some better shots coming. Stay tune.
+Thinking about upgrading my gear sometime this year. Not sure yet, but if I do, maybe there'll be some better shots coming. Stay tuned.
 
 ## Cleaning Things Up, Saying Bye to Pocket
 
@@ -55,7 +55,7 @@ No big ideas this time. Just sharing what’s been on my mind and what I’ve be
 
 I’ve also been working on a few other side projects. Mostly small stuff with that same calm coding vibe. Still trying to practice a bit of digital minimalism too, clear things out, keep what matters.
 
-And yeah, I still owe a couple technical blog posts. They’re coming. Eventually
+And yeah, I still owe a couple technical blog posts. They're coming. Eventually.
 
 Till next time,  
 **Hazy**

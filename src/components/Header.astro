@@ -145,10 +145,10 @@ const { activeNav } = Astro.props;
   }
 
   nav {
-    @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
+    @apply flex w-full flex-col items-start sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
   }
   nav ul {
-    @apply mt-6 grid w-48 grid-cols-1 gap-y-1 sm:ml-0 sm:mt-0 sm:w-auto sm:flex sm:flex-row sm:gap-x-6 sm:gap-y-0;
+    @apply mt-6 w-full flex flex-col gap-y-1 sm:ml-0 sm:mt-0 sm:w-auto sm:flex sm:flex-row sm:gap-x-6 sm:gap-y-0;
   }
   nav ul li {
     @apply flex items-center justify-center;

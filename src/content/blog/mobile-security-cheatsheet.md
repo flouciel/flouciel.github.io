@@ -15,7 +15,7 @@ TL;DR: I made this cheatsheet in my Obsidian notes to stop Googling the same stu
 ## 🛡️ My Environment Setup
 
 ### Environment 
-Here’s my basic testing setup — nothing too fancy, just what actually works day-to-day:
+Here's my basic testing setup, nothing too fancy, just what actually works day-to-day:
 
 - **Android devices**: Google Pixel 4 (rooted with Magisk)
 - **Emulators**: Android AVD (used to be Genymotion)
@@ -60,7 +60,7 @@ sdkmanager "system-images;android-34;google_apis_playstore;arm64-v8a" "platforms
 avdmanager create avd --name 'pixel' --package "system-images;android-34;google_apis_playstore;arm64-v8a" -d pixel
 emulator -avd pixel -no-snapshot-load
 ```
-if having error, start with full path
+If you get an error, start with the full path
 ```bash
 $ANDROID_HOME/emulator/emulator -avd pixel -no-snapshot-load
 ```
@@ -103,16 +103,16 @@ kill -9 pid
 #Start Frida process
 /data/local/tmp/frida-server & 
 
-#If the pid of process that wanna hook com.example.dev
+# To hook a process like com.example.dev
 
 frida -U -f com.example.dev -l script.js
 ```
-The scripts I used
-- Flutter SSL pinning — using frida-flutterproxy
+The scripts I used:
+- Flutter SSL pinning using frida-flutterproxy
 
 Repo: https://github.com/hackcatml/frida-flutterproxy
 ```bash
-#change IP 
+# change IP address 
 frida -U -f com.example.dev -l ssl-bypass.js
 ```
 - Bypass talsec / RASP & root detection

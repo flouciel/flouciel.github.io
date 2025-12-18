@@ -14,9 +14,9 @@ description: "Think about managing the risks of hard coded secrets."
 
 ## The Backstage
 
-If secrets are so sensitive, why do developers still hard code them in the codebase? It's not because they aren't concerned about security, they understand the risks of exposed secrets. But real world development is messy and often siloed, filled with challenges that make security an afterthought. 
+If secrets are so sensitive, why do developers still hard code them in the codebase? It's not because they aren't concerned about security. They understand the risks of exposed secrets. But real-world development is messy and often siloed, filled with challenges that make security an afterthought. 
 
-We all have deep respect for our developers, they're brilliant problem solvers and deeply knowledgeable about their code. Deadlines are tight, so many features are in the queue, debugging needs to be fast, and occasionally, developers just need to get things done. Security extra steps will be in the backlog with the seatbelt *"Will remove later"*.
+We all have deep respect for our developers. They're brilliant problem solvers and deeply knowledgeable about their code. Deadlines are tight, so many features are in the queue, debugging needs to be fast, and occasionally, developers just need to get things done. Extra security steps end up in the backlog with the seatbelt note *"Will remove later"*.
 
 ![sleep-meme](@assets/images/sleep-meme.png)
 
@@ -58,19 +58,19 @@ Secrets in code are **a risk multiplier**, silent and growing until they explode
 
 ### How Do We Catch This?
 
-We don't just enforce security, we work with developers, not against them. Security should integrate smoothly into the their daily SDLC which called AppSec processes without slowing teams down.
+We don't just enforce security. We work with developers, not against them. Security should integrate smoothly into their daily SDLC, which is called AppSec processes, without slowing teams down.
 
 #### A Real World Example
 
 Let's say we're working at a **blitzscaling startup**, where the product is developing at lightning speed to hit MVP and keep up with agile demands. 
 
 - Speed > Security
-- No buget for the fancy security tools (commercial)
-- Developers commit secrets because “it’s internal”
+- No budget for fancy security tools (commercial)
+- Developers commit secrets because "it's internal"
 
 The challenge? Detect and manage secrets **at scale**, using **open source** tools.
 
-### Solution 1: Gitleaks + GitLab CI (orther tool works as well)
+### Solution 1: Gitleaks + GitLab CI (other tools work as well)
 
 We integrated [Gitleaks](https://github.com/gitleaks/gitleaks) into GitLab CI pipelines using **centralized templates**.
 
@@ -128,14 +128,14 @@ stages:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   script:
     - aws s3 cp gitleaks.* s3://secret-scan/$CI_PROJECT_NAME/$CI_COMMIT_BRANCH/
-    - echo "uploaded successful"
+    - echo "uploaded successfully"
 ```
 
 ### Solution 2: Trufflehog
 
-[TruffleHog](https://github.com/trufflesecurity/trufflehog) is another powerful tool in your secrets detection toolbox. It scans Git history, file systems, Docker images, PDFs, and more, using over 800+ detectors to find secrets. What sets it apart? It doesn't just match patterns — it can verify secrets against live APIs when supported (like AWS, GitHub, etc.), helping cut down on false positives.
+[TruffleHog](https://github.com/trufflesecurity/trufflehog) is another powerful tool in your secrets detection toolbox. It scans Git history, file systems, Docker images, PDFs, and more, using over 800+ detectors to find secrets. What sets it apart? It doesn't just match patterns. It can verify secrets against live APIs when supported (like AWS, GitHub, etc.), helping cut down on false positives.
 
-Unlike GitHub, GitLab requires authentication for API access — even for public projects. So to scan GitLab repos, you’ll need to pass your personal access token (PAT) to TruffleHog using --token.
+Unlike GitHub, GitLab requires authentication for API access, even for public projects. So to scan GitLab repos, you'll need to pass your personal access token (PAT) to TruffleHog using --token.
 
 And if your org uses self-hosted GitLab, make sure to specify the API endpoint.
 ```shell
@@ -147,13 +147,13 @@ trufflehog gitlab \
 ```
 
 ## Final thoughts
-Ater detecting the secrets, simply deleting a secret from the latest commit **does not mean it's gone**, it's already in history, caches, forks, and clones. Attackers and automated tools can still find and exploit it.
+After detecting the secrets, simply deleting a secret from the latest commit **does not mean it's gone**. It's already in history, caches, forks, and clones. Attackers and automated tools can still find and exploit it.
 
-Default rules won’t catch everything. Tailor regex patterns and allowlists to the business. Every org has unique identifiers. Reflect those in your detection config — whether you're using Gitleaks, TruffleHog, or both.
+Default rules won't catch everything. Tailor regex patterns and allowlists to your business. Every org has unique identifiers. Reflect those in your detection config, whether you're using Gitleaks, TruffleHog, or both.
 
 Some next moves: 
-- Use centralized secret manager like **AWS Secrets Manager, HashiCorp Vault, or Doppler** 
-- Always layer secret detections with pre-commit hooks.
-- Security Awareness, work with them, and educate your teams
-- Rotate and monitor secret 
+- Use a centralized secret manager like **AWS Secrets Manager, HashiCorp Vault, or Doppler** 
+- Always layer secret detection with pre-commit hooks.
+- Security awareness: work with your teams and educate them
+- Rotate and monitor secrets 
 

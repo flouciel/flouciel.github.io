@@ -23,7 +23,7 @@ Let's begin.
 
 ## Threat Modeling TLDR version
 
-Threat Modeling is a broad term and can mean very different things depend on your category. 
+Threat modeling is a broad term and can mean very different things depending on your category. 
 
 In practical terms:  Threat modeling is the process of determining which assets are in the system and how we will secure them from the start. This involves analyzing the system's design to define the assets, brainstorming potential threats, and collaboratively developing mitigation strategies to protect them -> <span class="accent"> proactive security</span>.
 
@@ -32,15 +32,15 @@ In practical terms:  Threat modeling is the process of determining which assets 
 ![threat-meme](@assets/images/threat-meme.png)
 ### Benefits
 
-- Find potential issues early. Enforce the strict and suffiecient rules while increasing risk awareness.
-- Deliver more secure software. Security is not blocker.
-- Reduce cost of mitigation
+- Find potential issues early. Enforce strict and sufficient rules while increasing risk awareness.
+- Deliver more secure software. Security doesn't have to be a blocker.
+- Reduce the cost of mitigation
 
 ![risk-diagram](@assets/images/risk-diagram.png)
 
-It's crucial to understand that threats will always present in our products. Some risks might not seem significant when viewed in isolation. However, when combined with other vulnerabilities or system components, they can create a chain interaction that leads to a serious security threat. Threat modeling helps identify and mitigate these risks early, ensuring a more secure foundation from the start.
+It's crucial to understand that threats will always be present in our products. Some risks might not seem significant when viewed in isolation. However, when combined with other vulnerabilities or system components, they can create a chain reaction that leads to a serious security threat. Threat modeling helps identify and mitigate these risks early, ensuring a more secure foundation from the start.
 
-Yes, <span class="accent"> secure by design</span>. This term is one of our main goals when doing threat modeling. We cannot be certain that 100% risks will occur or can be predicted. But we believe that the output of threat modeling - a set of potential issues is a good material for pentesting, red teaming exercises, and leads to fewer issues or reduced impact in later phases.
+Yes, <span class="accent">secure by design</span>. This term is one of our main goals when doing threat modeling. We can't be certain that 100% of risks will occur or can be predicted. But we believe that the output of threat modeling, a set of potential issues, is good material for pentesting and red teaming exercises, and leads to fewer issues or reduced impact in later phases.
 
 ### Threat Modeling Manifesto
 
@@ -67,7 +67,7 @@ There are many threat modeling techniques out there, with no one-size-fits-all a
 
 >  1. Threat modeling is only for security or developers.
 
-Threat modeling is not only for security professionals or developers. It's a collaborative effort that involves everyone in the development team, from business analysts to developers to security experts. It's not a one-time activity, but a continuous process that should be integrated into the development lifecycle. Our goal is not stop at technical risks, it also includes the operational and business risks.
+Threat modeling isn't just for security professionals or developers. It's a collaborative effort that involves everyone on the development team, from business analysts to developers to security experts. It's not a one-time activity, but a continuous process that should be integrated into the development lifecycle. Our goal isn't to stop at technical risks. It also includes operational and business risks.
 
 > 2. Threat modeling is only for large or complex systems.
 
@@ -83,4 +83,4 @@ Threat modeling is not just for prevention; it can also serve as valuable materi
 
 ### Close Thoughts
 
-Threat modeling is an ongoing process, not a final destination. It is not something you finish and are cheerful about. By expanding the perspective, I think we can see the bigger picture beyond the obvious threats, and gain a better understand the unexpected risks that lie ahead. Let's build more resilient, effective and secure application. 
+Threat modeling is an ongoing process, not a final destination. It's not something you finish and feel good about. By expanding our perspective, I think we can see the bigger picture beyond the obvious threats and gain a better understanding of the unexpected risks that lie ahead. Let's build more resilient, effective, and secure applications. 
